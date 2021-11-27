@@ -1,8 +1,17 @@
-import React from 'react'
+import {LoaderFunction, useLoaderData} from "remix"; 
+import React from 'react'; 
 
-function IndividualPun() {
+export const loader: LoaderFunction = async ({params}) => {
+    console.log("Params are ", params);  
+    return params;
+}
+
+function IndividualPun() { 
+    let {punid} = useLoaderData() 
+    console.log("Loader Data is", punid);
     return (
-        <div>
+        <div> 
+            {punid} <br/>
             This is what a new pun should look like
         </div>
     )
