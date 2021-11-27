@@ -1,6 +1,31 @@
-// Hope that it doesn't matter what we have inside Index.tsx ( the component name)
-// this shall always route down to the base "/" route
+import type { LinksFunction } from "remix";
+import { Link } from "remix";
+import stylesUrl from "../styles/index.css";
 
-export default function IndexRoute(){
-    return <div>This is Index Route</div>
+export let links: LinksFunction = () => {
+  return [
+    {
+      rel: "stylesheet",
+      href: stylesUrl
+    }
+  ];
+};
+
+export default function Index() {
+  return (
+    <div className="container">
+      <div className="content">
+        <h1>
+           <span>iPuns!</span>
+        </h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to="puns">Read Puns</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  );
 }
