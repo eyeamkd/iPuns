@@ -14,10 +14,12 @@ export let links: LinksFunction = () => {
 export default function Index() {
   return (
     <div className="container">
-      <div className="content">
-        <h1>
-           <span>iPuns!</span>
+      <div className="content"> 
+      <div style={{margin:'20px'}}>
+        <h1 >
+           iPuns!
         </h1>
+      </div>
         <nav>
           <ul>
             <li>
